@@ -5,9 +5,44 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #ffffff;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+*{
+  margin : 0;
+}
+
+/* Button styles for adding an album */
+.add-btn {
+  background-color: #FF005B;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: #FFB3C8;
+  color: #FF005B;
+}
+
+/* Button styles for canceling */
+.cnl-btn {
+  background-color: #D10047;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.cnl-btn:hover {
+  background-color: #FFB3C8;
 }

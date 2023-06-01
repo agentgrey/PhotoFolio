@@ -8,7 +8,7 @@ import AlbumForm from "../AlbumForm/albumForm"
 import {db} from "../../firebaseInit"
 import {collection,onSnapshot} from "firebase/firestore";
 
-function AlbumList() {
+function AlbumList({props, setPhotoId, setAlbumName}) {
 
     const [form,setForm] = useState("add");
     const [album,setAlbum] = useState([]);
@@ -24,6 +24,12 @@ function AlbumList() {
             setAlbum(album);
         })
     },[])
+
+    function handlePhotos(id, name) {
+        props(true);
+        setPhotoId({id : id});
+        setAlbumName({name : name});
+    }
 
 
     return (
@@ -41,7 +47,8 @@ function AlbumList() {
             <div className={Style.album_container}>   
                 {album.map((album)=>{
                     return (
-                        <div className={Style.album_details}>
+                        // display each album
+                        <div className={Style.album_details} onClick={()=>handlePhotos(album.id,album.name)}>
                             <img className={Style.album_img} alt="album" 
                             src="https://cdn-icons-png.flaticon.com/128/7894/7894161.png"/>
                             <div className={Style.album_title}>{album.name}</div> 

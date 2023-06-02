@@ -1,4 +1,34 @@
-# Getting Started with Create React App
+# PhotoFolio
+PhotoFolio is a web application that allows users to create and manage photo albums. It provides a user-friendly interface to upload, view, update, and delete images within albums.
+
+## Features
+* Album management: Users can create new albums and view all their albums.
+* Image management: Users can upload images to their albums, update image details and delete images.
+* Image gallery: Users can view all the images in an album in a visually appealing gallery format.
+* Image preview: Users can click on an image to view a larger preview and navigate through the images in a carousel-like manner.
+* Search functionality: Users can search for specific images within an album using keywords.
+
+## Technologies Used
+* Front-end: HTML, CSS, JavaScript, React
+* Back-end: Firebase (Firestore)
+
+## Folder Structure
+The project folder structure is organized as follows:
+
+* public/: Contains the static files and the HTML template file.
+* src/: Contains the source code of the React application.
+  * components/: Contains reusable React components used throughout the application.
+    * AlbumForm
+    * AlbumList
+    * ImageForm
+    * ImageList
+    * Navbar
+    * UpdateForm
+  * firebaseInit.js: Firebase configuration and initialization code.
+  * App.js: Main component that renders the application.
+  * index.js: Entry point of the application.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

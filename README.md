@@ -24,7 +24,6 @@ The project folder structure is organized as follows:
     * ImageList
     * Navbar
     * UpdateForm
-  * pages/: Contains the main pages of the application (Home, Album, ImageList, etc.).
   * firebaseInit.js: Firebase configuration and initialization code.
   * App.js: Main component that renders the application.
   * index.js: Entry point of the application.

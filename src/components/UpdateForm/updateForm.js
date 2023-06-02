@@ -1,5 +1,7 @@
 // importing Hooks
 import React,{ useState ,useRef} from 'react';
+// importing Toast 
+import { toast } from "react-toastify";
 // importing Styles
 import Style from "./updateForm.module.css";
 // importing Firebase
@@ -20,6 +22,17 @@ function UpdateForm({path, img, setUpdateForm }) {
       id: formData.id,
       title: formData.title,
       url: formData.url
+    });
+
+    // toast message for success
+    toast.success('Image updated successfully!', {
+      position: toast.POSITION.TOP_RIGHT,
+      autoClose: 3000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined
     });
 
     // Close the form

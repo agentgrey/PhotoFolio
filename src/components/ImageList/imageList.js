@@ -1,5 +1,7 @@
 // importing Hooks
 import React, { useState, useEffect } from "react";
+// importing Toast 
+import { toast } from "react-toastify";
 // importing Styles
 import Style from "./imageList.module.css";
 // importing Components
@@ -9,8 +11,8 @@ import UpdateForm from "../UpdateForm/updateForm";
 import { db } from "../../firebaseInit";
 import { collection, onSnapshot, deleteDoc, setDoc, doc } from 'firebase/firestore';
 
-function ImageList(path, ImgName, setVisibile) {
-
+function ImageList(path, ImgName, setVisible) {
+  // State variables
   const [form, setForm] = useState("add");
   const [updateForm, setUpdateForm] = useState(false);
   const [updateImg, setUpdateImg] = useState({ title: '', url: '', id: '' });
@@ -20,6 +22,7 @@ function ImageList(path, ImgName, setVisibile) {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
+    // Fetch images from Firestore
     const unsub = onSnapshot(collection(db, `albums/${path.path}/images`), (snapShot) => {
       const Imgs = snapShot.docs.map((doc) => {
         return {
@@ -54,6 +57,17 @@ function ImageList(path, ImgName, setVisibile) {
   async function handleDelete(e, id) {
     e.stopPropagation();
     await deleteDoc(doc(db, `albums/${path.path}/images`, id));
+
+    // toast message for success
+    toast.success('Image deleted successfully!', {
+      position: toast.POSITION.TOP_RIGHT,
+      autoClose: 3000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined
+    });
   }
 
   // Function to handle search term change
@@ -72,7 +86,9 @@ function ImageList(path, ImgName, setVisibile) {
       {form === 'add' ? "" : <ImageForm path={path} />}
       <div>
         <div className={Style.header_img}>
-          <div onClick={() => { path.setVisible(false) }}> <img className={Style.back_icon} src="https://cdn-user-icons.flaticon.com/76452/76452489/1685689622094.svg?token=exp=1685690525~hmac=b460a6d5c6d9a4714c8307d46cd1fd12" alt="back" /> </div>
+          <div onClick={() => { path.setVisible(false) }}>
+            <img className={Style.back_icon} src="https://cdn-user-icons.flaticon.com/76452/76452489/1685689622094.svg?token=exp=1685690525~hmac=b460a6d5c6d9a4714c8307d46cd1fd12" alt="back" />
+          </div>
           <h1 className={Style.heading}>Images in {path.path}</h1>
           <div className={Style.images_menu}>
             {/* Search input */}
@@ -90,7 +106,7 @@ function ImageList(path, ImgName, setVisibile) {
           </div>
         </div>
       </div>
-      {/* Conditionoal redering of the updateForm which will edit images details*/}
+      {/* Conditionoal rendering of the updateForm which will edit image details */}
       <div>
         {updateForm ? <UpdateForm
           path={path.path}
@@ -98,10 +114,11 @@ function ImageList(path, ImgName, setVisibile) {
           setUpdateForm={setUpdateForm} /> : ""}
       </div>
 
-
-      { images.length===0 ? <div className={Style.img_empty}>Looks like the images went on an adventure! They'll be back soon.</div> :
-      filteredImages.length === 0 ?
-        // If there are no images
+      {/* Conditional rendering based on the number of images */}
+       { images.length===0 ? 
+       <div className={Style.img_empty}>Looks like the images went on an adventure! They'll be back soon.</div> :
+          filteredImages.length === 0 ?
+        // If there are no images matching the search term
         <div className={Style.img_empty}>Oops! No image matches your search</div> :
         // Show all the images present in the album
         <div className={Style.img_conatainer}>
@@ -128,7 +145,6 @@ function ImageList(path, ImgName, setVisibile) {
             )
           })}
         </div>} 
-
 
       {/* Carousel to view images */}
       {selectedImg && (

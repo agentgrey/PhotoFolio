@@ -117,8 +117,8 @@
 }
 
 .modal img {
-  max-width: 80%;
-  min-height: 70%;
+  max-height: 90%;
+  min-width: 70%;
 }
 .closeButton {
   position: absolute;

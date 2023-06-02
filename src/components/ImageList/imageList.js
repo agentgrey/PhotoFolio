@@ -7,6 +7,9 @@ import Style from "./imageList.module.css";
 // importing Components
 import ImageForm from "../ImageForm/imageForm";
 import UpdateForm from "../UpdateForm/updateForm";
+import back from "../Assets/goback.png";
+import edit from "../Assets/edit.png";
+import trash from "../Assets/delete.png";
 // importing Firebase
 import { db } from "../../firebaseInit";
 import { collection, onSnapshot, deleteDoc, setDoc, doc } from 'firebase/firestore';
@@ -87,7 +90,7 @@ function ImageList(path, ImgName, setVisible) {
       <div>
         <div className={Style.header_img}>
           <div onClick={() => { path.setVisible(false) }}>
-            <img className={Style.back_icon} src="https://cdn-user-icons.flaticon.com/76452/76452489/1685689622094.svg?token=exp=1685690525~hmac=b460a6d5c6d9a4714c8307d46cd1fd12" alt="back" />
+            <img className={Style.back_icon} src={back} alt="back" />
           </div>
           <h1 className={Style.heading}>Images in {path.path}</h1>
           <div className={Style.images_menu}>
@@ -134,9 +137,9 @@ function ImageList(path, ImgName, setVisible) {
                     setUpdateForm(true);
                     setUpdateImg({ title: img.title, url: img.url, id: img.id });
                   }}
-                    src="https://cdn-user-icons.flaticon.com/76452/76452489/1685690077960.svg?token=exp=1685690981~hmac=983412bc1908aa68bb503c36c5e5245f" alt="edit" />
+                    src={edit} alt="edit" />
                   <img onClick={(e) => handleDelete(e, img.id)}
-                    src="https://cdn-user-icons.flaticon.com/76452/76452489/1685689038709.svg?token=exp=1685689942~hmac=3fbd05a9df080bf663abc06fba4ac69f" alt="delete" />
+                    src={trash} alt="delete" />
                 </div>
                 <div className={Style.img_title}>
                   {img.title}

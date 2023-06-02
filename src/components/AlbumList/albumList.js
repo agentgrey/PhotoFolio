@@ -48,7 +48,8 @@ function AlbumList({props, setPhotoId, setAlbumName}) {
                 {album.map((album)=>{
                     return (
                         // display each album
-                        <div className={Style.album_details} onClick={()=>handlePhotos(album.id,album.name)}>
+                        <div className={Style.album_details} onClick={()=>handlePhotos(album.id,album.name)} 
+                        key={album.id}>
                             <img className={Style.album_img} alt="album" 
                             src="https://cdn-icons-png.flaticon.com/128/7894/7894161.png"/>
                             <div className={Style.album_title}>{album.name}</div> 

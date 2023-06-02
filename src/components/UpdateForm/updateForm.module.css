@@ -1,0 +1,64 @@
+/* imgForm.module.css */
+
+.img_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin: auto;
+  margin-top: 30px;
+  border-radius: 14px;
+  background-color: #f3f3f3;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 40%;
+}
+.img_form input {
+    margin-bottom: 20px;
+}
+.form_row {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.img_name {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 300px;
+  border: none;
+}
+
+.clear_btn,
+.create_btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.clear_btn {
+  background-color: #D10047;
+  margin-right: 10px;
+  color: #fff;
+}
+
+.create_btn {
+  background-color: #FFD1DC;
+  color: #FF005B;
+}
+
+.create_btn:hover,
+.clear_btn:hover {
+  opacity: 0.8;
+}
+
+
+.clear_btn:hover {
+    background-color: #ad2d58;
+}
+.create_btn:hover {
+  background-color: #FFB3C8;
+}

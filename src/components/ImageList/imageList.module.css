@@ -12,7 +12,7 @@
   font-size: 28px;
 }
 .back_icon {
-  width: 40px;
+  width: 55px;
   cursor: pointer;
 }
 /* Styles for ImageList component */
@@ -29,11 +29,28 @@
   border-radius: 8px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
-
+.img_details:hover .img_options {
+  visibility: visible;
+}
+.img_options {
+  visibility: hidden;
+  position: absolute;
+  top: 50px;
+  left: 80px;
+}
+.img_options img {
+  width: 40px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+.img_options img:hover {
+  transform: scale(1.1);
+}
 .img_display {
   width: 100%;
   height: 130px;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .img_display img {
@@ -43,8 +60,9 @@
   transition: transform 0.3s ease;
 }
 
-.img_display img:hover {
+.img_details:hover .img_display img{
   transform: scale(1.1);
+  opacity: 0.6;
 }
 
 .img_title {
@@ -71,11 +89,57 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999;
+  z-index: 1;
 }
 
 .modal img {
   max-width: 80%;
-  max-height: 80%;
+  min-height: 70%;
 }
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  padding: 8px 13px;
+  background-color: #D10047;
+  color: #fff;
+  font-weight: bold;
+  font-size: 26px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.closeButton:hover {
+  background-color: #cf6281;
+}
+.prevButton,
+.nextButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 5px 17px;
+  background-color: transparent;
+  color: #fff;
+  font-weight: bold;
+  font-size: 50px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.prevButton:hover, .nextButton:hover {
+  background-color: #8dc95479;
+  transition:ease-in 0.2s;
+  /* border-radius: 50%; */
+  padding: 5px 17px;
+}
+.prevButton {
+  left: 30px;
+}
+.nextButton {
+  right: 30px;
+}
+
+
+
+
 

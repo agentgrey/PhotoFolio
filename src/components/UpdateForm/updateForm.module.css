@@ -13,12 +13,12 @@
   width: 40%;
 }
 .img_form input {
-    margin-bottom: 20px;
+    margin-bottom: 12px;
 }
 .form_row {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .img_name {

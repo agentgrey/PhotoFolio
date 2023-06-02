@@ -36,6 +36,7 @@ function UpdateForm({path, img, setUpdateForm }) {
   return (
     <div>
       <form onSubmit={handleUpdate} className={Style.img_form}>
+        <h3 style={{paddingBottom:20 +"px"}}>Update {img.title}</h3>
           <input
             type="text"
             value={formData.title}

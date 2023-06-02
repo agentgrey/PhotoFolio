@@ -12,7 +12,13 @@
   font-size: 34px;
 }
 
-
+.album_empty {
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10%;
+}
 .album_container{
   display: flex;
   flex-wrap: wrap;

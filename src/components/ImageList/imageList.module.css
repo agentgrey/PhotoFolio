@@ -15,6 +15,30 @@
   width: 55px;
   cursor: pointer;
 }
+.img_empty {
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10%;
+}
+.images_menu {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.images_menu input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1.5px solid #FF005B;
+  border-radius: 4px;
+  width: 55%;
+}
+.images_menu input:focus {
+  outline: 1.5px solid #66BF10;
+  border: none;
+  outline-offset: -1px;
+}
 /* Styles for ImageList component */
 .img_conatainer {
   display: grid;

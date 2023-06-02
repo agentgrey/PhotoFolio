@@ -44,6 +44,8 @@ function AlbumList({props, setPhotoId, setAlbumName}) {
                 </div>
             </div>
             
+            {album.length==0 ? 
+            <div className={Style.album_empty}>Albums are on a leave: Embrace the empty canvas.</div> :
             <div className={Style.album_container}>   
                 {album.map((album)=>{
                     return (
@@ -56,7 +58,7 @@ function AlbumList({props, setPhotoId, setAlbumName}) {
                         </div>
                     )
                 })}
-            </div>
+            </div> }
         </div>
     )
 }
